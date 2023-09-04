@@ -16,3 +16,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "GongGuBox"
 include(":app")
+include(":domain")
+include(":data")
