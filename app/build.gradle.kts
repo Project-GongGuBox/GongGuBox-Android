@@ -7,12 +7,12 @@ plugins {
 
 android {
     namespace = "com.example.gonggubox"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.gonggubox"
         minSdk = 30
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -42,8 +42,18 @@ android {
 dependencies {
     implementation("androidx.core:core-ktx:1.10.1")
 
-    /* Android LifeCycle Runtime */
+    /* Kotlin Coroutine */
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+
+    /* -- Android LifeCycle ViewModel, LiveData -- */
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
+
+    /* DI(Dependency Injection) Tools */
+    implementation("com.google.dagger:hilt-android:2.47")
+    ksp("com.google.dagger:hilt-android-compiler:2.47")
 
     /* Jetpack Compose */
     implementation(platform("androidx.compose:compose-bom:2023.08.00"))
@@ -52,10 +62,10 @@ dependencies {
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
-
-    /* DI(Dependency Injection) Tools */
-    implementation("com.google.dagger:hilt-android:2.47")
-    ksp("com.google.dagger:hilt-android-compiler:2.47")
+    implementation("androidx.compose.material:material-icons-extended:1.5.0")
+    implementation("androidx.compose.runtime:runtime-livedata:1.5.0")
+    implementation("androidx.navigation:navigation-compose:2.7.1")
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
 
     /* Android Test Implementation */
     testImplementation("junit:junit:4.13.2")
