@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -19,7 +18,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun InitPage1(
+fun FirstInitPage(
     modifier: Modifier = Modifier
 ) {
     Surface(
@@ -57,7 +56,7 @@ fun InitPage1(
 }
 
 @Composable
-fun InitPage2(
+fun SecondInitPage(
     modifier: Modifier = Modifier
 ) {
     Surface(
@@ -70,28 +69,28 @@ fun InitPage2(
             verticalArrangement = Arrangement.Top,
             content = {
                 Text(
-                    text = "혼자서 사용하기에는",
+                    text = "주변 구성원들과",
                     color = MaterialTheme.colorScheme.onSurface,
                     fontSize = 35.sp,
                     fontWeight = FontWeight.Bold
                 )
                 Spacer(modifier = modifier.size(10.dp))
                 Text(
-                    text = "너무 많은 양이라",
+                    text = "필요한 만큼",
                     color = MaterialTheme.colorScheme.onSurface,
                     fontSize = 35.sp,
                     fontWeight = FontWeight.Bold
                 )
                 Spacer(modifier = modifier.size(10.dp))
                 Text(
-                    text = "고민 되신다고요?",
+                    text = "나누어서",
                     color = MaterialTheme.colorScheme.onSurface,
                     fontSize = 35.sp,
                     fontWeight = FontWeight.Bold
                 )
                 Spacer(modifier = modifier.size(10.dp))
                 Text(
-                    text = "고민 되신다고요?",
+                    text = "구매하세요!",
                     color = MaterialTheme.colorScheme.onSurface,
                     fontSize = 35.sp,
                     fontWeight = FontWeight.Bold
@@ -104,5 +103,11 @@ fun InitPage2(
 @Preview
 @Composable
 fun PreviewInitPage1() {
-    InitPage1()
+    FirstInitPage()
+}
+
+@Preview
+@Composable
+fun PreviewInitPAge2() {
+    SecondInitPage()
 }
