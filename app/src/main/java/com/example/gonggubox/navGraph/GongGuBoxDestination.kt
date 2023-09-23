@@ -2,7 +2,6 @@ package com.example.gonggubox.navGraph
 
 interface GongGuBoxDestination { val route: String }
 
-object LogoPage: GongGuBoxDestination { override val route: String = "LogoPage" }
 object FirstInitPage: GongGuBoxDestination { override val route: String = "FirstInitPage" }
 object SecondInitPage: GongGuBoxDestination { override val route: String = "SecondInitPage"}
 object SignInPage: GongGuBoxDestination { override val route: String = "SignInPage" }

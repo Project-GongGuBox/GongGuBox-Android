@@ -13,10 +13,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             val navController: NavHostController = rememberNavController()
-
-            GongGuBoxTheme {
-                GongGuBoxNavHost(navController = navController)
-            }
+            GongGuBoxTheme { GongGuBoxNavHost(navController = navController) }
         }
     }
 }
