@@ -37,10 +37,7 @@ fun GongGuBoxTheme(
     content: @Composable () -> Unit
 ) {
     val view: View = LocalView.current
-    val colorScheme: ColorScheme = when {
-        darkTheme -> darkColorScheme
-        else -> lightColorScheme
-    }
+    val colorScheme: ColorScheme = if (darkTheme) { darkColorScheme } else { lightColorScheme }
 
     if (!view.isInEditMode) {
         SideEffect {
