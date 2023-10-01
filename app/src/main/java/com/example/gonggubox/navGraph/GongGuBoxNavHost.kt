@@ -5,6 +5,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.gonggubox.ui.CertOTPCodePage
 import com.example.gonggubox.ui.InitPage1
 import com.example.gonggubox.ui.InitPage2
 import com.example.gonggubox.ui.SignInPage
@@ -41,5 +42,6 @@ fun GongGuBoxNavHost(
             }
         }
         composable(SignInPage.route) { SignInPage() }
+        composable(InputOTPCodePage.route) { CertOTPCodePage() }
     }
 }

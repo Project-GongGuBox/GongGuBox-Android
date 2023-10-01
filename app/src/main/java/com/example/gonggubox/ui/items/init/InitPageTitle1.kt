@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.gonggubox.ui.theme.Typography
 
@@ -26,18 +27,21 @@ fun InitPageTitle1() {
             Text(
                 text = "혼자서 사용하기에는",
                 color = MaterialTheme.colorScheme.onSurface,
+                fontWeight = FontWeight.Bold,
                 style = Typography.displaySmall
             )
             Spacer(modifier = Modifier.size(25.dp))
             Text(
                 text = "너무 많은 양이라",
                 color = MaterialTheme.colorScheme.onSurface,
+                fontWeight = FontWeight.Bold,
                 style = Typography.displaySmall
             )
             Spacer(modifier = Modifier.size(25.dp))
             Text(
                 text = "고민 되신다고요?",
                 color = MaterialTheme.colorScheme.onSurface,
+                fontWeight = FontWeight.Bold,
                 style = Typography.displayMedium
             )
         }

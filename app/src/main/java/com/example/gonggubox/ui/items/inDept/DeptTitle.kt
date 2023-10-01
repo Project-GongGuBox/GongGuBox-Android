@@ -10,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.gonggubox.ui.theme.GongGuBoxTheme
@@ -24,6 +25,7 @@ fun InDeptTitle() {
         Text(
             text = "환영합니다!",
             color = MaterialTheme.colorScheme.onSurface,
+            fontWeight = FontWeight.Bold,
             style = Typography.displayMedium
         )
         Row(
@@ -32,12 +34,14 @@ fun InDeptTitle() {
                 Text(
                     text = "&User",
                     color = MaterialTheme.colorScheme.onSurface,
+                    fontWeight = FontWeight.Bold,
                     style = Typography.displayMedium
                 )
                 Spacer(modifier = Modifier.size(5.dp))
                 Text(
                     text = "님의",
                     color = MaterialTheme.colorScheme.onSurface,
+                    fontWeight = FontWeight.Bold,
                     style = Typography.displaySmall
                 )
             }
@@ -45,6 +49,7 @@ fun InDeptTitle() {
         Text(
             text = "소속을 알려주세요!",
             color = MaterialTheme.colorScheme.onSurface,
+            fontWeight = FontWeight.Bold,
             style = Typography.displaySmall
         )
     }
