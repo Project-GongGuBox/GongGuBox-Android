@@ -1,8 +1,8 @@
-package com.example.data.entities
+package com.example.data.entities.member
 
 import com.google.gson.annotations.SerializedName
 
-data class LogInMemberEntity(
+data class MemberLogInEntity(
     @SerializedName("username") val userName: String,
     @SerializedName("password") val userPWD: String
 )

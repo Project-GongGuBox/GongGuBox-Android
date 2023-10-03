@@ -1,9 +1,9 @@
-package com.example.data.entities
+package com.example.data.entities.member
 
 import com.example.data.util.MemberClass
 import com.google.gson.annotations.SerializedName
 
-data class UpdateMemberEntity(
+data class MemberUpdateEntity(
     @SerializedName("username") val userName: String,
     @SerializedName("password") val userPWD: String,
     @SerializedName("email") val userEmail: String,

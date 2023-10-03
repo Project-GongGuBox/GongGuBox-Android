@@ -1,8 +1,8 @@
-package com.example.data.entities
+package com.example.data.entities.member
 
 import com.google.gson.annotations.SerializedName
 
-data class JoinMemberEntity(
+data class MemberJoinEntity(
     @SerializedName("username") val userName: String,
     @SerializedName("email") val userEmail: String,
     @SerializedName("phoneNumber") val userPhoneNumber: String,
