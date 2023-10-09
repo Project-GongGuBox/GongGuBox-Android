@@ -13,4 +13,5 @@ interface MemberControllerRepos {
 
     fun logInMember(memberLogInModel: MemberLogInModel): Flow<Result<Unit>>
 
+    fun updateMember()
 }

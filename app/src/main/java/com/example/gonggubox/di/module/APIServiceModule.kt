@@ -1,5 +1,6 @@
 package com.example.gonggubox.di.module
 
+import com.example.gonggubox.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,7 +17,7 @@ object APIServiceModule {
     @Singleton
     fun provideServiceClient(okHttpClient: OkHttpClient): Retrofit =
         Retrofit.Builder()
-            .baseUrl("https://www.gonggubox.shop")
+            .baseUrl(BuildConfig.GONGGUBOX_API_URI)
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()

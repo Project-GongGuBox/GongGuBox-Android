@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -21,6 +23,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "GONGGUBOX_API_URI", getAPiURI("GONGGUBOX_API_URI"))
         vectorDrawables { useSupportLibrary = true }
     }
 
@@ -33,10 +36,15 @@ android {
             )
         }
     }
-    buildFeatures { compose = true }
+    buildFeatures {
+        compose = true
+        buildConfig = true
+    }
     composeOptions { kotlinCompilerExtensionVersion = "1.4.3" }
     packaging { resources { excludes += "/META-INF/{AL2.0,LGPL2.1}" } }
 }
+
+fun getAPiURI(propertyUri: String) = gradleLocalProperties(rootDir).getProperty(propertyUri)
 
 dependencies {
     implementation("androidx.core:core-ktx:1.12.0")
@@ -66,8 +74,8 @@ dependencies {
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.material:material-icons-extended:1.5.2")
-    implementation("androidx.compose.runtime:runtime-livedata:1.5.2")
-    implementation("androidx.navigation:navigation-compose:2.7.3")
+    implementation("androidx.compose.runtime:runtime-livedata:1.5.3")
+    implementation("androidx.navigation:navigation-compose:2.7.4")
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
 
     /* Android Test Implementation */

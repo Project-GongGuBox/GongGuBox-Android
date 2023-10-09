@@ -1,5 +1,7 @@
 package com.example.data.api
 
+import com.example.data.entities.category.CategoryAddEntity
+import com.example.data.entities.category.CategoryUpdateEntity
 import com.example.data.entities.item.ItemCreateEntity
 import com.example.data.entities.item.ItemEntity
 import com.example.data.entities.item.ItemUpdateEntity
@@ -23,20 +25,20 @@ interface GongGuBoxAPIService {
     /* OAuth Controller
     *   - TODO("Is that right?, authResultCode into Query?")
     * */
-    @GET("/oauth2/code/kakao")
+    @GET("oauth2/code/kakao")
     suspend fun kakaoLogIn(@Query("code") authResultCode: String): Response<Void>
 
-    @GET("/oauth2/code/google")
+    @GET("oauth2/code/google")
     suspend fun googleLogIn(@Query("code") authResultCode: String): Response<Void>
 
     /* Member Controller */
-    @POST("/member/join")
+    @POST("member/join")
     suspend fun joinMember(@Body joinMemberEntity: MemberJoinEntity): Response<Void>
 
-    @POST("/member/login")
+    @POST("member/login")
     suspend fun logInMember(@Body logInMemberEntity: MemberLogInEntity): Response<Void>
 
-    @PATCH("/member/updateMember")
+    @PATCH("member/updateMember")
     suspend fun updateMember(
         @Header("Authorization") accessToken: String,
         @Body updateMemberEntity: MemberUpdateEntity
@@ -45,10 +47,10 @@ interface GongGuBoxAPIService {
     /**
      * TODO("Ask This API Function because of there's no parameters")
      * */
-    @GET("/member/getMemberById")
+    @GET("member/getMemberById")
     suspend fun getMemberByID(@Header("Authorization") accessToken: String): Response<MemberEntity>
 
-    @GET("/member/getMemberByEmail")
+    @GET("member/getMemberByEmail")
     suspend fun getMemberByEmail(
         @Header("Authorization") accessToken: String,
         @Query("email") email: String
@@ -57,79 +59,114 @@ interface GongGuBoxAPIService {
     /**
      * TODO("Ask This API Function because of there's no parameters")
      * */
-    @DELETE("/member/deleteMember")
+    @DELETE("member/deleteMember")
     suspend fun deleteMember(@Header("Authorization") accessToken: String): Response<Void>
 
 
     /* Order Controller */
-    @POST("/order/createOrder")
+    @POST("order/createOrder")
     suspend fun createOrder(
         @Header("Authorization") accessToken: String,
         @Body orderItemList: OrderListPostEntity
     ): Response<Void>
 
-    @GET("/order/getOrder")
+    @GET("order/getOrder")
     suspend fun getOrder(
         @Header("Authorization") accessToken: String,
         @Query("orderId") orderID: Int
     ): Response<Void>
 
-    @DELETE("/order/deleteOrder")
+    @DELETE("order/deleteOrder")
     suspend fun deleteOrder(
         @Header("Authorization") accessToken: String,
         @Query("orderId") orderID: Int
     ): Response<Void>
 
     /* Notice Controller */
-    @POST("/notice/createNotice")
+    @POST("notice/createNotice")
     suspend fun createNotice(
         @Header("Authorization") accessToken: String,
         @Body noticeItem: NoticeCreateEntity
     ): Response<Void>
 
-    @GET("/notice/getNotice")
+    @GET("notice/getNotice")
     suspend fun getNotice(
         @Header("Authorization") accessToken: String,
         @Query("noticeId") noticeID: Int
     ): Response<NoticeEntity>
 
-    @PATCH("/notice/updateNotice")
+    @PATCH("notice/updateNotice")
     suspend fun updateNotice(
         @Header("Authorization") accessToken: String,
         @Body noticeItem: NoticeEntity
     ): Response<Void>
 
-    @DELETE("/notice/deleteNotice")
+    @DELETE("notice/deleteNotice")
     suspend fun deleteNotice(
         @Header("Authorization") accessToken: String,
         @Query("noticeId") noticeID: Int
     ): Response<Void>
 
     /* Item Controller */
-    @POST("/item/createItem")
+    @POST("item/createItem")
     suspend fun createItem(
         @Header("Authorization") accessToken: String,
         @Body itemEntity: ItemCreateEntity
     ): Response<Void>
 
-    @GET("/item/getItem")
+    @GET("item/getItem")
     suspend fun getItem(
         @Header("Authorization") accessToken: String,
         @Query("itemId") itemID: Int
     ): Response<ItemEntity>
 
-    @PATCH("/item/updateItem")
+    @PATCH("item/updateItem")
     suspend fun updateItem(
         @Header("Authorization") accessToken: String,
         @Body itemUpdateEntity: ItemUpdateEntity
     ): Response<Void>
 
-    @DELETE("/item/deleteItem")
+    @DELETE("item/deleteItem")
     suspend fun deleteItem(
         @Header("Authorization") accessToken: String,
         @Query("itemId") itemID: Int
     ): Response<Void>
 
     /* Category Controller */
+    @POST("category/addCategory")
+    suspend fun addCategory(
+        @Header("Authorization") accessToken: String,
+        @Body categoryAddEntity: CategoryAddEntity
+    ): Response<Void>
 
+    @PATCH("category/updateCategory")
+    suspend fun updateCategory(
+        @Header("Authorization") accessToken: String,
+        @Body categoryUpdateEntity: CategoryUpdateEntity
+    ): Response<Void>
+
+    @GET("category/getCategoryByName")
+    suspend fun getCategoryByName()
+
+    @GET("category/getCategoryById")
+    suspend fun getCategoryById()
+
+    @DELETE("category/deleteCategory")
+    suspend fun deleteCategory()
+
+    /* Cart Controller */
+    @POST("cart/addItemToCart")
+    suspend fun addItemToCart()
+
+    @PATCH("cart/updateItemCountInCart")
+    suspend fun updateItemCntInCart()
+
+    @PATCH("cart/clearCart")
+    suspend fun clearCartItem()
+
+    @GET("cart/getCart")
+    suspend fun getCart()
+
+    @DELETE("cart/deleteItemInCart")
+    suspend fun deleteItemInCart()
 }
