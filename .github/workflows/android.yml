@@ -21,7 +21,7 @@ jobs:
       uses: android-actions/setup-android@v2
     
     - name: Cache Gradle package
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       with: 
         path: |
           ~/.gradle/caches
@@ -29,7 +29,13 @@ jobs:
         key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties', '**/buildSrc/**/*.kt') }}
         restore-keys: |
           ${{ runner.os }}-gradle-
-            
+    
+    - name: Make local.properties
+      run: |
+        touch ./local.properties
+        echo "${{ secrets.LOCAL_PROPERTIES }}" > ./local.properties
+      shell: bash
+      
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
       
