@@ -1,3 +1,3 @@
-package com.example.data.util
+package com.example.util
 
 enum class MemberClass { BRONZE, SILVER, GOLD }

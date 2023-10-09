@@ -1,6 +1,6 @@
 package com.example.data.entities.notice
 
-import com.example.data.util.NoticeClass
+import com.example.util.NoticeClass
 import com.google.gson.annotations.SerializedName
 
 /* TODO("Is that Right? Need to Check Attribute Naming") */
