@@ -1,6 +1,6 @@
 package com.example.data.entities.member
 
-import com.example.data.util.MemberClass
+import com.example.util.MemberClass
 import com.google.gson.annotations.SerializedName
 
 /* TODO("Is that Right? Need to Check Entity Naming") */

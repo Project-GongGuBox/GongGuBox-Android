@@ -34,6 +34,9 @@ android {
 dependencies {
     implementation("androidx.core:core-ktx:1.12.0")
 
+    /* Project Dependencies */
+    implementation(project(mapOf("path" to ":util")))
+
     /* Kotlin Coroutine */
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 

@@ -1,7 +1,7 @@
 package com.example.data.entities.item
 
 import com.example.data.entities.address.Address
-import com.example.data.util.ItemStatusClass
+import com.example.util.ItemStatusClass
 import com.google.gson.annotations.SerializedName
 
 /* TODO("Is that Right? Need to Check Attribute Naming") */

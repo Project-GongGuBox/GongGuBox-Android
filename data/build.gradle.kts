@@ -34,7 +34,8 @@ android {
 dependencies {
     implementation("androidx.core:core-ktx:1.12.0")
 
-    /* Util dependency */
+    /* Project Dependencies */
+    implementation(project(mapOf("path" to ":domain")))
     implementation(project(mapOf("path" to ":util")))
 
     /* Kotlin Coroutine */

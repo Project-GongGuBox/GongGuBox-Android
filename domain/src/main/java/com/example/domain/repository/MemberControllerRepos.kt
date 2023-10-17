@@ -5,7 +5,7 @@ import com.example.domain.model.MemberLogInModel
 import kotlinx.coroutines.flow.Flow
 
 /**
- * Member-Controller API Functions Repository
+ * Member-Controller API function Repository
  * */
 interface MemberControllerRepos {
 
@@ -13,5 +13,11 @@ interface MemberControllerRepos {
 
     fun logInMember(memberLogInModel: MemberLogInModel): Flow<Result<Unit>>
 
-    fun updateMember()
+    fun updateMember(): Flow<Result<Unit>>
+
+    fun getMemberById()
+
+    fun getMemberByEmail()
+
+    fun deleteMember(): Flow<Result<Unit>>
 }
