@@ -9,35 +9,44 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    
     steps:
-    - uses: actions/checkout@v3
-    - name: set up JDK 17
+    - name: Repository 체크아웃
+      uses: actions/checkout@v3
+      
+    - name: JDK 17 설정
       uses: actions/setup-java@v3
       with:
         java-version: '17'
         distribution: 'temurin'
         cache: gradle
-    - name: Setup Android SDK 
-      uses: android-actions/setup-android@v2
+      
+    - name: Android SDK 설정 
+      uses: android-actions/setup-android@v3
     
-    - name: Cache Gradle package
+    - name: Gradle package 캐싱
       uses: actions/cache@v3
       with: 
         path: |
           ~/.gradle/caches
           ~/.gradle/wrapper
         key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties', '**/buildSrc/**/*.kt') }}
-        restore-keys: |
-          ${{ runner.os }}-gradle-
+        restore-keys: ${{ runner.os }}-gradle-
     
-    - name: Make local.properties
-      run: |
-        touch ./local.properties
-        echo "${{ secrets.LOCAL_PROPERTIES }}" > ./local.properties
-      shell: bash
-      
-    - name: Grant execute permission for gradlew
+    - name: Gradlew 실행 권한 허용
       run: chmod +x gradlew
+    
+    - name: local.properties 생성
+      env: 
+        LOCAL_PROPERTIES: "${{ secrets.LOCAL_PROPERTIES }}"
+      run: echo $LOCAL_PROPERTIES > ./local.properties
+
+    - name: raw/fullchain.pem 생성
+      env: 
+        FULL_CHAIN_PEM: ${{ secrets.FULL_CHAIN_PEM }}
+      run: |
+        mkdir ./app/src/main/res/raw
+        echo $FULL_CHAIN_PEM > ./app/src/main/res/raw/fullchain.pem
       
     - name: Build with Gradle
-      run: ./gradlew build
+      run: ./gradlew clean build
