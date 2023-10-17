@@ -37,10 +37,9 @@ jobs:
       run: chmod +x gradlew
     
     - name: local.properties 생성
-      run: |
-        touch ./local.properties
-        echo "${{ secrets.LOCAL_PROPERTIES }}" > ./local.properties
-      shell: bash
+      env: 
+        LOCAL_PROPERTIES: "${{ secrets.LOCAL_PROPERTIES }}"
+      run: echo $LOCAL_PROPERTIES > ./local.properties
 
     - name: raw/fullchain.pem 생성
       env: 
