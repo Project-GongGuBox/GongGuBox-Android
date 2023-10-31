@@ -43,10 +43,10 @@ jobs:
 
     - name: raw/fullchain.pem 생성
       env: 
-        FULL_CHAIN_PEM: ${{ secrets.FULL_CHAIN_PEM }}
+        FULL_CHAIN_PEM: ${{ secrets.GONGGUBOX_SRT }}
       run: |
         mkdir ./app/src/main/res/raw
-        echo $FULL_CHAIN_PEM > ./app/src/main/res/raw/fullchain.pem
+        echo $FULL_CHAIN_PEM > ./app/src/main/res/raw/gonggubox.crt
       
     - name: Build with Gradle
       run: ./gradlew clean build
