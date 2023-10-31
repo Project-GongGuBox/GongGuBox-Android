@@ -5,9 +5,7 @@ plugins {
     id("com.google.dagger.hilt.android")
 }
 
-kotlin {
-    jvmToolchain(17)
-}
+kotlin { jvmToolchain(17) }
 
 android {
     namespace = "com.example.domain"
@@ -39,6 +37,10 @@ dependencies {
 
     /* Kotlin Coroutine */
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+
+    /* OAuth 2.0 LOGIN (KAKAO, GOOGLE) */
+    implementation("com.kakao.sdk:v2-user:2.17.0")
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
 
     /* Retrofit2 */
     implementation("com.squareup.retrofit2:retrofit:2.9.0")

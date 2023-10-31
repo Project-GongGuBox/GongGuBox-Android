@@ -29,7 +29,7 @@ object SSLSocketFactoryModule {
     @Singleton
     fun provideKeyPair(@ApplicationContext context: Context): Certificate? {
         val keyPairFactory: CertificateFactory = CertificateFactory.getInstance("X.509")
-        val keyPairInputStream: InputStream = context.resources.openRawResource(R.raw.fullchain)
+        val keyPairInputStream: InputStream = context.resources.openRawResource(R.raw.gonggubox)
         var keyPairAuth: Certificate? = null
 
         try {
