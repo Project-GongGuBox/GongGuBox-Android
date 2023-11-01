@@ -16,18 +16,19 @@ import com.example.gonggubox.ui.theme.GongGuBoxTheme
 
 @Preview(showBackground = true)
 @Composable
-fun InDeptPage() {
+fun InputDeptPage(modifier: Modifier = Modifier) {
     GongGuBoxTheme {
         Surface(
-            modifier = Modifier.fillMaxSize(),
+            modifier = modifier.fillMaxSize(),
             color = MaterialTheme.colorScheme.surface
         ) {
             Column(
-                modifier = Modifier.padding(20.dp),
+                modifier = modifier.padding(20.dp),
                 verticalArrangement = Arrangement.Top,
-                horizontalAlignment = Alignment.CenterHorizontally,
+                horizontalAlignment = Alignment.Start,
                 content = {
                     InDeptTitle()
+
                 }
             )
         }

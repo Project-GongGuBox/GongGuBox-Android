@@ -68,6 +68,7 @@ fun MainRowCard(modifier: Modifier) {
                             style = Typography.labelMedium
                         )
                         RatingRow(modifier = modifier, rating = "4.3", ratingPeoples = "60")
+                        PriceRowCard(modifier = modifier, price = "15000원", fundingRate = "60% 펀딩 됨")
                     }
                 )
             }

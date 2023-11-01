@@ -1,26 +1,25 @@
 package com.example.gonggubox.ui.items.main
 
 import androidx.compose.foundation.layout.wrapContentSize
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AddShoppingCart
-import androidx.compose.material3.ExtendedFloatingActionButton
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 
 @Composable
-fun CartFabBtn(
+fun CartBtn(
     modifier: Modifier,
     onCartClick: () -> Unit
 ) {
-    ExtendedFloatingActionButton(
+    IconButton(
         onClick = onCartClick,
         modifier = modifier.wrapContentSize(),
-        shape = CircleShape,
-        contentColor = MaterialTheme.colorScheme.primary,
+        colors = IconButtonDefaults.iconButtonColors(MaterialTheme.colorScheme.primary),
         content = {
             Icon(
                 imageVector = Icons.Default.AddShoppingCart,

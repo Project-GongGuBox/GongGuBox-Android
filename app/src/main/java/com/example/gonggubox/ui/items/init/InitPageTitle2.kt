@@ -15,9 +15,9 @@ import androidx.compose.ui.unit.dp
 import com.example.gonggubox.ui.theme.Typography
 
 @Composable
-fun InitPageTitle2() {
+fun InitPageTitle2(modifier: Modifier) {
     Column(
-        modifier = Modifier.padding(top = 70.dp, start = 15.dp, end = 15.dp),
+        modifier = modifier.padding(top = 50.dp, start = 15.dp, end = 15.dp),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.Start,
         content = {
@@ -27,21 +27,21 @@ fun InitPageTitle2() {
                 fontWeight = FontWeight.Bold,
                 style = Typography.displaySmall
             )
-            Spacer(modifier = Modifier.size(25.dp))
+            Spacer(modifier = modifier.size(25.dp))
             Text(
                 text = "필요한 만큼",
                 color = MaterialTheme.colorScheme.onSurface,
                 fontWeight = FontWeight.Bold,
                 style = Typography.displaySmall
             )
-            Spacer(modifier = Modifier.size(25.dp))
+            Spacer(modifier = modifier.size(25.dp))
             Text(
                 text = "나누어서",
                 color = MaterialTheme.colorScheme.onSurface,
                 fontWeight = FontWeight.Bold,
                 style = Typography.displayLarge
             )
-            Spacer(modifier = Modifier.size(25.dp))
+            Spacer(modifier = modifier.size(25.dp))
             Text(
                 text = "공동 구매 하세요!",
                 color = MaterialTheme.colorScheme.onSurface,

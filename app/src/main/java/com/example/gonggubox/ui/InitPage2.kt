@@ -16,21 +16,22 @@ import com.example.gonggubox.R
 import com.example.gonggubox.ui.items.init.InitPageTitle2
 
 @Composable
-fun InitPage2() {
+fun InitPage2(modifier: Modifier) {
     Surface(
-        modifier = Modifier.fillMaxSize(),
+        modifier = modifier.fillMaxSize(),
         color = MaterialTheme.colorScheme.surface
     ) {
         Column(
             verticalArrangement = Arrangement.SpaceBetween,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            InitPageTitle2()
-            Image(
-                painter = painterResource(id = R.drawable.logo_init2),
-                modifier = Modifier.size(400.dp),
-                contentDescription = "Init-page2 Logo"
-            )
-        }
+            horizontalAlignment = Alignment.Start,
+            content = {
+                InitPageTitle2(modifier = modifier)
+                Image(
+                    painter = painterResource(id = R.drawable.logo_init2),
+                    modifier = modifier.size(400.dp),
+                    contentDescription = "Init-page2 Logo"
+                )
+            }
+        )
     }
 }

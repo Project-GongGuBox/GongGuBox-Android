@@ -26,6 +26,7 @@ android {
         manifestPlaceholders["NATIVE_APP_KEY"] = getAPiURI("KAKAO_APP_KEY")
         buildConfigField("String", "GONGGUBOX_API_URI", getAPiURI("GONGGUBOX_API_URI"))
         buildConfigField("String", "KAKAO_APP_KEY", getAPiURI("KAKAO_APP_KEY"))
+        buildConfigField("String", "GOOGLE_WEB_CLIENT_KEY", getAPiURI("GOOGLE_WEB_CLIENT_ID"))
         vectorDrawables { useSupportLibrary = true }
     }
 
