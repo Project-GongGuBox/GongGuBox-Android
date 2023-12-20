@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 pluginManagement {
     repositories {
         google()
@@ -17,6 +19,10 @@ dependencyResolutionManagement {
 
 rootProject.name = "GongGuBox"
 include(":app")
-include(":domain")
-include(":data")
-include(":util")
+
+include(":core:data")
+include(":core:domain")
+include(":core:design_system")
+include(":core:network")
+include(":core:ui")
+include(":core:model")

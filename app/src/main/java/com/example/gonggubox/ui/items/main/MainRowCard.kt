@@ -25,7 +25,14 @@ import com.example.gonggubox.ui.theme.GongGuBoxShape
 import com.example.gonggubox.ui.theme.Typography
 
 @Composable
-fun MainRowCard(modifier: Modifier) {
+fun MainRowCard(
+    modifier: Modifier = Modifier,
+    title: String,
+    rating: String,
+    ratingPeoples: String,
+    price: String,
+    fundingRate: String
+) {
     Card(
         modifier = modifier
             .width(160.dp)
@@ -62,13 +69,13 @@ fun MainRowCard(modifier: Modifier) {
                     content = {
                         Spacer(modifier = modifier.size(3.dp))
                         Text(
-                            text = "출근 전 간단한 한 끼! 치즈 스프레드",
+                            text = title,
                             overflow = TextOverflow.Ellipsis,
                             maxLines = 2,
                             style = Typography.labelMedium
                         )
-                        RatingRow(modifier = modifier, rating = "4.3", ratingPeoples = "60")
-                        PriceRowCard(modifier = modifier, price = "15000원", fundingRate = "60% 펀딩 됨")
+                        RatingRow(modifier = modifier, rating = rating, ratingPeoples = ratingPeoples)
+                        PriceRowCard(modifier = modifier, price = price, fundingRate = fundingRate)
                     }
                 )
             }
@@ -80,5 +87,11 @@ fun MainRowCard(modifier: Modifier) {
 @Preview
 @Composable
 fun PreviewMainRowCard() {
-    MainRowCard(Modifier)
+    MainRowCard(
+        title = "출근 전 간단한 한 끼! 치즈 스프레드",
+        rating = "4.3",
+        ratingPeoples = "60",
+        price = "15000원",
+        fundingRate = "60% 펀딩 됨"
+    )
 }
