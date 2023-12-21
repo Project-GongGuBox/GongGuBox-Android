@@ -3,6 +3,8 @@ plugins {
     id("org.jetbrains.kotlin.android")
 }
 
+kotlin { jvmToolchain(17) }
+
 android {
     namespace = "com.example.design_system"
     compileSdk = 34
